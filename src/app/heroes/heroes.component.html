@@ -1,0 +1,10 @@
+<h2>My Heroes</h2>
+<mat-selection-list [multiple]="false">
+  <mat-list-option *ngFor="let hero of heroes" [class.selected]="hero === selectedHero"
+                 (click)="onSelect(hero)">
+    <h3 matLine> {{hero.name | uppercase}} </h3>
+    <p matLine>
+      <span> ID: {{hero.id}} </span>
+    </p>
+  </mat-list-option>
+</mat-selection-list>
