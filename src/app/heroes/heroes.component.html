@@ -1,10 +1,9 @@
-<h2>My Heroes</h2>
-<mat-selection-list [multiple]="false">
-  <mat-list-option *ngFor="let hero of heroes" [class.selected]="hero === selectedHero"
-                 (click)="onSelect(hero)">
-    <h3 matLine> {{hero.name | uppercase}} </h3>
-    <p matLine>
-      <span> ID: {{hero.id}} </span>
-    </p>
-  </mat-list-option>
-</mat-selection-list>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button>
+  </li>
+</ul>
